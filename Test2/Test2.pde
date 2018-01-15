@@ -45,13 +45,14 @@ void setup() {
 void draw() {
   background(255);
   
+  // draw a flower
   // let's pretend there's 7 days in a week or something, this is just a test
-  
   for (int i = 0; i < 7; i++) {
+    // for each petal
     beginShape();
-
-    float innerRadius = table.getRow(i).getInt(1)/75;
-    float outerRadius = average/75;
+    
+    float innerRadius = table.getRow(i).getInt(1)/average * 50;
+    float outerRadius = table.getRow(i).getInt(1)/average * 75;
     
 
     
