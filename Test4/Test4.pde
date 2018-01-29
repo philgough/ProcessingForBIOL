@@ -47,7 +47,7 @@ void draw() {
   for (int i = 0; i < numDays; i++) {
     float x = map(i, 0, numDays, 10, width - 10);
     
-    float y = height - map(table.getRow(i).getFloat(1), 0, maxSteps, 10, height-10);
+    float y = height - map(table.getRow(i).getFloat("steps"), 0, maxSteps, 10, height-10);
   
     
     for (int j = height; j > y; j-=10) {
