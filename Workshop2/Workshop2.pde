@@ -24,9 +24,11 @@ stroke(0, 255, 255);
 point(40, 20);
 
 
-strokeWeight(1);
+strokeWeight(3);
 
-float numPoints = 40;
+ellipse(100, 50, 80, 80);
+
+float numPoints = 20;
 
 beginShape();
 for (float i = 0.0 ; i < numPoints; i++) {
@@ -74,4 +76,31 @@ curveVertex(200 + sin(0) * 40, 200 + cos(0) * 40);
 curveVertex(200 + sin(0) * 40, 200 + cos(0) * 40);
 
 endShape();
-   
+  
+
+stroke(255, 0, 255);
+beginShape();
+curveVertex(100 + sin(radians((numPoints - 1)/numPoints * 360)) * 40, 200 + cos(radians(numPoints-1/numPoints * 360)) * 40);
+
+for (float i = 0.0 ; i < numPoints; i++) {
+  float y = 200.0;
+  float x = 100.0;
+
+  float degrees = i/numPoints * 360.0;
+  float offset = 40.0;
+  float x1 = x + offset * sin(radians(degrees));
+  
+  float y1 = y + offset * cos(radians(degrees));
+  strokeWeight(1);
+  stroke(0);
+  line(x, y, x1,y1);
+  stroke(0, 0, 0);
+  strokeWeight(3);
+  curveVertex(x1, y1);
+  
+  
+}
+curveVertex(100 + sin(0) * 40, 200 + cos(0) * 40);
+curveVertex(100 + sin(radians(1/numPoints * 360)) * 40, 200 + cos(radians(1/numPoints * 360)) * 40);
+
+endShape();
